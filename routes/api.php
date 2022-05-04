@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Customer\CustomerController;
+use App\Http\Controllers\Posts\PostController;
 use App\Http\Controllers\Users\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('users', UsersController::class);
     Route::apiresource('customers', CustomerController::class);
+    Route::apiResource('posts', PostController::class);
+
 });
 
