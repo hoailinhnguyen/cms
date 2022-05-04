@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\Customers\CustomerRepository;
 use App\Repositories\Customers\CustomerRepositoryEloquent;
+use App\Repositories\Posts\PostRepository;
+use App\Repositories\Posts\PostRepositoryEloquent;
 use App\Repositories\Users\UserRepository;
 use App\Repositories\Users\UserRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
@@ -19,6 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(CustomerRepository::class, CustomerRepositoryEloquent::class);
         $this->app->bind(UserRepository::class, UserRepositoryEloquent::class);
+        $this->app->bind(PostRepository::class, PostRepositoryEloquent::class);
 
     }
 
